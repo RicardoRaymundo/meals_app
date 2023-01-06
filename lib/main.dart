@@ -10,10 +10,24 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeData = ThemeData();
+
     return MaterialApp(
       title: 'Vamos Cozinhar?',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: themeData.colorScheme.copyWith(
+          primary: Colors.pink,
+          secondary: Colors.amber,
+        ),
+        primarySwatch: Colors.pink,
+        fontFamily: 'Raleway',
+        canvasColor: Color.fromRGBO(255, 254, 229, 1),
+        textTheme: ThemeData.light().textTheme.copyWith(
+              titleMedium: const TextStyle(
+                fontFamily: 'RobotoCondensed',
+                fontSize: 20,
+              ),
+            ),
       ),
       home: const CategoriesScreen(),
     );
