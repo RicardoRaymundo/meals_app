@@ -15,7 +15,14 @@ class MealItem extends StatelessWidget {
     Navigator.of(context).pushNamed(
       AppRoutes.mealDetail,
       arguments: meal,
-    );
+    ).then((result) {
+      if(result == null) {
+        print('Sem resultado');
+      } else {
+        // Recebeu objeto passado pela função pop() da tela que navegamos acima
+        print(result);
+      }
+    });
   }
 
   @override
